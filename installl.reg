@@ -1,0 +1,13 @@
+﻿Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\bacherik]
+@="URL:bacherik"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\bacherik\Shell]
+
+[HKEY_CLASSES_ROOT\bacherik\Shell\Open]
+
+[HKEY_CLASSES_ROOT\bacherik\Shell\Open\Command]
+@="\"C:\\Users\\Bach_Erik\\source\\repos\\TEstWegenArgs\\TEstWegenArgs\\bin\\Debug\\netcoreapp3.1\\TEstWegenArgs.exe\" \"%1\""
+
