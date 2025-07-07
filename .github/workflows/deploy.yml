@@ -6,12 +6,22 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22]
     steps:
       - uses: actions/checkout@v4
-      - name: Node.js
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
       - run: pnpm run build
       - name: Deploy with gh-pages
         uses: peaceiris/actions-gh-pages@v4
